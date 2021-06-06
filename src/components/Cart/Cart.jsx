@@ -9,7 +9,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
 
     const EmptyCart = () => (
         <Typography varient='subtitle'>У вас нет товаров в корзине!
-            <Link to='/' className={classes.link}>Пора бы уже выбрать что-то и добавить!</Link>
+            <Link to='/' className={classes.link}> Пора бы уже выбрать что-то и купить!</Link>
         </Typography>
     )
 
