@@ -26,7 +26,7 @@ const Cart = ({ cart, handleUpdateCartQty, handleRemoveFromCart, handleEmptyCart
             <Typography variant='h4'>Итого к оплате: {cart.subtotal.formatted_with_symbol}</Typography>
             <div>
                 <Button className={classes.emptyButton} size='large' type='button' variant='contained' color='secondary' onClick={handleEmptyCart}>Очистить корзину</Button>
-                <Button className={classes.checkoutButton} size='large' type='button' variant='contained' color='primary'>Оформить заказ</Button>
+                <Button component={Link} to='/checkout' className={classes.checkoutButton} size='large' type='button' variant='contained' color='primary'>Оформить заказ</Button>
             </div>
         </div>
         </>
