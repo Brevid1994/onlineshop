@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { Paper, Stepper, Step, StepLabel, Typography, CircularProgress, Divider, Button } from '@material-ui/core'
 import { commerce } from '../../../lib/commerce'
+import { Link } from 'react-router-dom'
 import useStyle from './styles'
 import  AddressForm  from '../AddressForm'
 import  PaymentForm  from '../PaymentForm'
@@ -39,11 +40,29 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
         nextStep()
     }
 
-    const Confirmation = () => (
-        <div>
-            Confirmation
+    const Confirmation = () => order.customer ? (
+        <>
+            <div>
+                <Typography variant='h5'>Благодарим за покупку, {order.customer.firstname}{order.customer.lastname}!</Typography>
+                <Divider className={classes.divider}/>
+                <Typography variant='subtitle2'>Order ref: {order.customer_reference}</Typography>
+            </div>
+            <br/>
+            <Button component={ Link } to='/' variant='outlined' type='button'>Вернуться домой</Button> 
+        </>
+    ) : (
+        <div className={classes.spinner}>
+            <CircularProgress/>
         </div>
-    )
+    );
+
+    if(error){
+        <>
+        <Typography variant='h5'>Ошибка: {error}</Typography>
+        <br/>
+        <Button component={ Link } to='/' variant='outlined' type='button'>Вернуться домой</Button> 
+        </>
+    }
 
     const Form = () => activeStep === 0 
     ? <AddressForm checkoutToken={checkoutToken} next={next}/> 
