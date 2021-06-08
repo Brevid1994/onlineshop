@@ -8,7 +8,7 @@ const App = () => {
     const [products, setProducts] = useState([])
     const [cart, setCart] = useState({})
     const [order, setOrder] = useState({})
-    const [errormessage, setErrorMessage] = useState('')
+    const [errorMessage, setErrorMessage] = useState('')
 
     const fetchProducts = async () => {
         const { data } = await commerce.products.list()
@@ -16,7 +16,7 @@ const App = () => {
         setProducts(data)
     }
 
-    const fetchCart = async () => {
+    const fetchCart = async () => { 
         setCart(await commerce.cart.retrieve())
     }
 
@@ -88,8 +88,8 @@ const App = () => {
                             cart={cart}
                             order={order}
                             onCaptureCheckut={handleCaptureCheckout}
-                            error={errormessage
-                            }></Checkout>
+                            error={errorMessage}
+                            ></Checkout>
                     </Route>
                 </Switch>
             </div>

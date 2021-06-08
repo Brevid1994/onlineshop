@@ -1,3 +1,3 @@
 import Commerce from '@chec/commerce.js'
 
-export const commerce = new Commerce('pk_28528afa7290b4bf77e26952362ac312b5b9b362114d1', true)
+export const commerce = new Commerce('pk_test_28528324bad45785a084b09ac1f07df0e59f2fa008ccc', true)
