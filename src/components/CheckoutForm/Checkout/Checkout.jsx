@@ -61,7 +61,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     ) : isFinished ? (
         <>
         <div>
-            <Typography variant='h5'>Благодарим за покупку!</Typography>
+            <Typography variant='h5'>Благодарим за покупку, Ваш заказ привезут через 15 минут, ждите звонка курьера! Хорошего дня!)</Typography>
             <Divider className={classes.divider}/> 
         </div>
         <br/>
