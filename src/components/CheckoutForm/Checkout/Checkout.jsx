@@ -51,7 +51,7 @@ const Checkout = ({ cart, order, onCaptureCheckout, error }) => {
     let Confirmation = () => order.customer ? (
         <>
             <div>
-                <Typography variant='h5'>Благодарим за покупку, {order.customer.firstname}{order.customer.lastname}!</Typography>
+                <Typography variant='h5'>Благодарим за покупку, Ваш заказ привезут через 15 минут, ждите звонка курьера! Хорошего дня!) {order.customer.firstname}{order.customer.lastname}!</Typography>
                 <Divider className={classes.divider}/>
                 <Typography variant='subtitle2'>Order ref: {order.customer_reference}</Typography>
             </div>
